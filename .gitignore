@@ -1,0 +1,23 @@
+# Sanal Ortam Klasörleri
+venv/
+.venv/
+env/
+/env/
+
+# Python Cache Dosyaları
+__pycache__/
+*.pyc
+
+# IDE ve Editör Ayar Dosyaları
+.vscode/
+.idea/
+
+# Playwright'in profil klasörü (artık kullanmasan da)
+/firefox_otomasyon_profili/
+
+# Hata ayıklama çıktıları
+hata.png
+kritik_hata.png
+
+# Hassas olabilecek dosyalar
+*.env

@@ -1,0 +1,20 @@
+Brotli @ file:///Users/runner/miniforge3/conda-bld/brotli-split_1756599213019/work
+certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1754231422783/work/certifi
+cffi @ file:///Users/runner/miniforge3/conda-bld/cffi_1725560577695/work
+charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1754767332901/work
+greenlet @ file:///Users/runner/miniforge3/conda-bld/greenlet_1734532821895/work
+h2 @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_h2_1756364871/work
+hpack @ file:///home/conda/feedstock_root/build_artifacts/hpack_1737618293087/work
+hyperframe @ file:///home/conda/feedstock_root/build_artifacts/hyperframe_1737618333194/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1733211830134/work
+playwright @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_playwright-python_1756735339/work
+playwright-stealth @ file:///home/conda/feedstock_root/build_artifacts/playwright-stealth_1750251868948/work
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pycparser_1733195786/work
+pyee @ file:///home/conda/feedstock_root/build_artifacts/pyee_1742282848884/work
+PySocks @ file:///home/conda/feedstock_root/build_artifacts/pysocks_1733217236728/work
+requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1755614211359/work
+setuptools==78.1.1
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_typing_extensions_1756220668/work
+urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1750271362675/work
+wheel==0.45.1
+zstandard==0.25.0
