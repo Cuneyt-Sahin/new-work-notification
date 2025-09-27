@@ -15,7 +15,7 @@ def run_checker():
         browser=None
         try:
             browser=p.firefox.launch(
-                headless=False,
+                headless=True,
                 slow_mo=300
         )
             context=browser.new_context()
