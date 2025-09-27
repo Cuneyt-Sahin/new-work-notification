@@ -52,10 +52,8 @@ def run_checker():
             page.get_by_role("button",name="Giriş Yap").click()
             sleep(uniform(60,90))
             page.goto("https://bionluk.com/panel/alici-istekleri")
-            sleep(uniform(2,4))
-            name=page.locator("#app div.bodyContainer > div.pageContainer div.content div.request-box").first
-            name.wait_for(state='visible', timeout=25000)
-            name1=name.locator("div.body p.body-title").inner_text()
+            sleep(uniform(8,12))
+            name1=page.locator("#app div.bodyContainer > div.pageContainer div.content div.request-box").first.locator("div.body p.body-title").inner_text()
             print(f"Takip başlıyor. Mevcut ilk başlık: {name1}")
             while True:
                 wait_time = uniform(360, 600)
@@ -63,8 +61,7 @@ def run_checker():
                 sleep(wait_time)
                 try:
                     page.reload(wait_until='domcontentloaded')
-                    name.wait_for(state='visible', timeout=25000)
-                    name2 = name.locator("div.body p.body-title").inner_text()
+                    name2 = page.locator("#app div.bodyContainer > div.pageContainer div.content div.request-box").first.locator("div.body p.body-title").inner_text()
 
                     if name2 != name1:
                         bildirim(name2)
