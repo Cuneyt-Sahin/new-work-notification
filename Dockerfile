@@ -11,7 +11,3 @@ COPY oto.py .
 # 4. Adım: Sadece Python kütüphanelerini kur
 RUN pip install -r requirements.txt
 
-# NOT: Artık "playwright install" veya "apt-get install" komutlarına gerek yok!
-
-# 5. Adım: Konteyner başladığında çalışacak komut
-CMD ["python", "oto.py"]
