@@ -7,13 +7,11 @@ WORKDIR /app
 # 3. Adım: Gerekli proje dosyalarını konteynerin içine kopyala
 COPY requirements.txt .
 COPY oto.py .
-COPY cookies.json .
 
 # 4. Adım: Sadece Python kütüphanelerini kur
 RUN pip install -r requirements.txt
 
-# NOT: Artık "apt-get install" VEYA "playwright install" komutlarına gerek yok!
-# Çünkü bu imajın içinde tarayıcılar ve tüm sistem kütüphaneleri zaten kurulu geliyor.
+# NOT: Artık "playwright install" veya "apt-get install" komutlarına gerek yok!
 
 # 5. Adım: Konteyner başladığında çalışacak komut
 CMD ["python", "oto.py"]
