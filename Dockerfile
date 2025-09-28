@@ -11,3 +11,6 @@ COPY oto.py .
 # 4. Adım: Sadece Python kütüphanelerini kur
 RUN pip install -r requirements.txt
 
+# 5. Adım: Konteyner başladığında hangi komutun çalışacağını belirt
+# Bu, projenin "Start Command"idir.
+CMD ["python", "oto.py"]
