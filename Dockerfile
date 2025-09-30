@@ -1,16 +1,24 @@
-# 1. Adım: Playwright'in resmi, her şeyin kurulu olduğu Python imajını temel al
+# 1. Adım: Playwright'in resmi, tarayıcıların ve Python'ın kurulu olduğu imajını temel al
+# Bu imaj, "Executable doesn't exist" hatasını çözer çünkü tarayıcılar içinde hazır gelir.
 FROM mcr.microsoft.com/playwright/python:v1.46.0-jammy
 
-# 2. Adım: Proje dosyalarının kopyalanacağı bir çalışma dizini oluştur
+# 2. Adım: Proje dosyaları için çalışma dizinini ayarla
 WORKDIR /app
 
-# 3. Adım: Gerekli proje dosyalarını konteynerin içine kopyala
-COPY requirements.txt .
-COPY oto.py .
+# --- Güvenlik İyileştirmesi ---
+# İmaj içindeki dosyaların sahibi olarak root yerine normal bir kullanıcıyı ('pwuser') ayarlayalım.
+# Bu, güvenlik açısından en iyi pratiktir.
+# Playwright imajı, bu iş için hazır 'pwuser' kullanıcısını içerir.
+COPY --chown=pwuser:pwuser requirements.txt .
+COPY --chown=pwuser:pwuser oto.py .
 
-# 4. Adım: Sadece Python kütüphanelerini kur
-RUN pip install -r requirements.txt
+# --- Optimizasyon ---
+# Bağımlılıkları kurarken gereksiz önbellek dosyaları oluşturmayarak imaj boyutunu küçültelim.
+RUN pip install --no-cache-dir -r requirements.txt
 
-# 5. Adım: Konteyner başladığında hangi komutun çalışacağını belirt
-# Bu, projenin "Start Command"idir.
+# --- Güvenlik İyileştirmesi ---
+# Konteyneri root yetkileriyle değil, standart bir kullanıcıyla çalıştır.
+USER pwuser
+
+# 5. Adım: Konteyner başladığında çalıştırılacak varsayılan komut
 CMD ["python", "oto.py"]
